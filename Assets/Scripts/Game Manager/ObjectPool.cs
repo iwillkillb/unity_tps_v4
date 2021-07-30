@@ -26,11 +26,11 @@ public class ObjectPool : MonoBehaviour
         public GameObject prefab;
         public int amount;
     }
-    public List<Pool> pools;
+    public List<Pool> pools;    // Input on Inspector
 
     public Dictionary<string, Queue<GameObject>> poolDictionary;    // Main list.
 
-    // Save to dictionary
+    // Save to dictionary : Make Objects -> Queue -> Dictionary
     void Start()
     {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
