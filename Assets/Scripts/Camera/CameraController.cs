@@ -78,6 +78,7 @@ public class CameraController : MonoBehaviour
         // Mouse input
         camYRotation += Input.GetAxis("Mouse X") * rotationSpeed;
         camXRotation -= Input.GetAxis("Mouse Y") * rotationSpeed;
+        // 국내에서는 다음과 같은 방법을 사용하지만, 해외에서는 -대신 +를 해서 반전시키는 것을 많이 사용한다.
     }
 
     private void LateUpdate()
