@@ -43,11 +43,16 @@ public class PlayerMovement : PlayerBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheckPosition.position, terrainCheckRadius, terrainLayer);
         isCeiling = Physics.CheckSphere(ceilingCheckPosition.position, terrainCheckRadius, terrainLayer);
-
-        // Slope force
-        if (isGrounded && verticalVelocity < 0f)
-        {
-            verticalVelocity = -2f;
+        
+        // Ground Check
+        if (isGrounded) {
+            verticalVelocity = 0f;
+            
+            // Slope force
+            if (verticalVelocity < 0f)
+            {
+                verticalVelocity = -2f;
+            }
         }
 
         // Ceiling Check
